@@ -1,4 +1,5 @@
 const cadastrados = document.querySelector("#cadastrados");
+let removeButtons = document.querySelectorAll(".removebtn");
 const http = new Http();
 
 http
@@ -27,12 +28,27 @@ http
       );
       usuario.appendChild(endereco);
 
+      const button  = document.createElement("button");
+      button.innerHTML = 'Remover';
+      button.classList = 'removebtn';
+      usuario.appendChild(button);
+
       cadastrados.appendChild(usuario);
     });
+    removeButtons = document.querySelectorAll(".removebtn");
+    updateOptions();
   });
 
 function createChild(content) {
   const info = document.createElement("p");
   info.innerHTML = content;
   return info;
+}
+
+function updateOptions(){
+removeButtons.forEach(button => {
+  button.addEventListener('click', (x) => {
+    x.target.parentElement.remove();
+  });
+});
 }
