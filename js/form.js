@@ -45,6 +45,9 @@ endereco.addEventListener("blur", () => {
 
 cadastro.addEventListener('submit', () => {
     CreateUser(nome.value, nome.value, tag.value, numero.value, endereco.value);
+    removeButtons = document.querySelectorAll(".removebtn");
+    openButtons = document.querySelectorAll('.title')
+    updateOptions();
     cadastro.reset();
     event.preventDefault();
 });

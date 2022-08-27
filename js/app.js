@@ -1,5 +1,6 @@
 const cadastrados = document.querySelector("#cadastrados");
 let removeButtons = document.querySelectorAll(".removebtn");
+let openButtons = document.querySelectorAll('.title')
 const http = new Http();
 
 http
@@ -15,6 +16,7 @@ http
       );
     });
     removeButtons = document.querySelectorAll(".removebtn");
+    openButtons = document.querySelectorAll('.title')
     updateOptions();
   });
 
@@ -26,36 +28,51 @@ function createChild(content) {
 
 function CreateUser(first_name, last_name, username, phone_number, address) {
   const usuario = document.createElement("div");
-  usuario.id = "usuario";
+  usuario.classList = "usuario";
+
+
+  const title = document.createElement("div");
+  title.classList = 'title';
 
   const nome = document.createElement("h1");
   nome.innerHTML = first_name;
-  usuario.appendChild(nome);
-
-  const nomeCompleto = createChild(`Nome: ${first_name} ${last_name}`);
-  usuario.appendChild(nomeCompleto);
-
-  const arroba = createChild(`Tag: @${username}`);
-  usuario.appendChild(arroba);
-
-  const numero = createChild(`Número: ${phone_number}`);
-  usuario.appendChild(numero);
-
-  const endereco = createChild(`Endereço: ${address}`);
-  usuario.appendChild(endereco);
+  title.appendChild(nome);
 
   const button = document.createElement("button");
   button.innerHTML = "Remover";
   button.classList = "removebtn";
-  usuario.appendChild(button);
+  title.appendChild(button);
 
+  usuario.appendChild(title);
+
+  const info = document.createElement("div");
+  info.classList = 'info';
+
+  const nomeCompleto = createChild(`Nome: ${first_name} ${last_name}`);
+  info.appendChild(nomeCompleto);
+
+  const arroba = createChild(`Tag: @${username}`);
+  info.appendChild(arroba);
+
+  const numero = createChild(`Número: ${phone_number}`);
+  info.appendChild(numero);
+
+  const endereco = createChild(`Endereço: ${address}`);
+  info.appendChild(endereco);
+
+  usuario.appendChild(info);
   cadastrados.appendChild(usuario);
 }
 
 function updateOptions() {
   removeButtons.forEach((button) => {
     button.addEventListener("click", (x) => {
-      x.target.parentElement.remove();
+      x.target.parentElement.parentElement.remove();
+    });
+  });
+  openButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      button.parentElement.querySelector('.info').style.display = 'block';
     });
   });
 }

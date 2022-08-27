@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
-</head>
-<body>
-    <form action="GET" id="cadastro">
+  </head>
+  <body>
+      <form action="GET" id="cadastro">
+      <h1>Cadastrar Pessoas</h1>
+        <div>
         <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome">
+        <input type="text" name="nome" id="nome" />
+        </div>
+        <div>
         <label for="tag">Tag:</label>
-        <input type="text" name="tag" id="tag">
+        <input type="text" name="tag" id="tag" />
+        </div>
+        <div>
         <label for="numero">Número:</label>
-        <input type="text" name="numero" id="numero">
+        <input type="text" name="numero" id="numero" />
+        </div>
+        <div>
         <label for="endereco">Endereço:</label>
-        <input type="text" name="endereco" id="endereco">
+        <input type="text" name="endereco" id="endereco" />
+        </div>
         <button type="submit">Cadastrar</button>
-    </form>
-    <div id="cadastrados">
-        
-    </div>
+      </form>
+      <nav>
+        <div id="cadastrados"></div>
+      </nav>
     <script src="js/http.js"></script>
     <script src="js/app.js"></script>
     <script src="js/form.js"></script>
-</body>
+  </body>
 </html>
