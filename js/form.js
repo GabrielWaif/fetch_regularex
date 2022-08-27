@@ -44,6 +44,7 @@ endereco.addEventListener("blur", () => {
 });
 
 cadastro.addEventListener('submit', () => {
+    CreateUser(nome.value, nome.value, tag.value, numero.value, endereco.value);
+    cadastro.reset();
     event.preventDefault();
-    
 });
