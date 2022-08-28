@@ -13,10 +13,10 @@ class currentCadastro {
   }
   validInputs() {
     if (
-      this.nome === true &&
-      this.tag === true &&
-      this.numero === true &&
-      this.endereco == true
+      this.nome &&
+      this.tag &&
+      this.numero &&
+      this.endereco 
     )
       return true;
     else return false;
