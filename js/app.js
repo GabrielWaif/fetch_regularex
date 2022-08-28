@@ -15,6 +15,7 @@ http
         `${item.address.country}, ${item.address.state}, ${item.address.city}, ${item.address.street_address}`
       );
     });
+    SendLocal();
     removeButtons = document.querySelectorAll(".removebtn");
     openButtons = document.querySelectorAll('.title')
     updateOptions();
@@ -64,10 +65,15 @@ function CreateUser(first_name, last_name, username, phone_number, address) {
   cadastrados.appendChild(usuario);
 }
 
+function SendLocal(){
+  localStorage.setItem('cadastrados', cadastrados.innerHTML);
+}
+
 function updateOptions() {
   removeButtons.forEach((button) => {
     button.addEventListener("click", (x) => {
       x.target.parentElement.parentElement.remove();
+      SendLocal();
     });
   });
   openButtons.forEach(button => {
