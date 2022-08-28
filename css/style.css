@@ -38,7 +38,7 @@ header{
     overflow: hidden;
 }
 
-#cadastro h1{
+#cadastro h1, #cadastrados h1{
     height: 40px;
     padding: 20px 5%;
     background-color: var(--background);
@@ -116,15 +116,24 @@ nav{
     display: none;
 }
 
+.info p{
+    margin-top: 10px;
+    margin: 10px;
+}
+
 .usuario{
     display: flex;
     flex-direction: column;
-    padding: 3vh;
+    margin: 3vh;
+    background-color: #282d35;
+    border-radius: 1vh;
+    overflow: hidden;
 }
 
 .title{
     position: relative;
     width: 100%;
+    height: 40px;
     display: flex;
     align-items: center;
     background-color: var(--background);
@@ -133,12 +142,12 @@ nav{
 
 .title button{
     position: absolute;
-    height: 90%;
+    height: 80%;
     border: none;
     border-radius: .5vh;
     right: 10px;
 }
 
-.title h1{
+.title h2{
     margin-left: 10px;
 }

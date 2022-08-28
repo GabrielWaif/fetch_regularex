@@ -34,7 +34,7 @@ function CreateUser(first_name, last_name, username, phone_number, address) {
   const title = document.createElement("div");
   title.classList = 'title';
 
-  const nome = document.createElement("h1");
+  const nome = document.createElement("h2");
   nome.innerHTML = first_name;
   title.appendChild(nome);
 
@@ -71,8 +71,14 @@ function updateOptions() {
     });
   });
   openButtons.forEach(button => {
+      let info = button.parentElement.querySelector('.info');  
     button.addEventListener('click', () => {
-      button.parentElement.querySelector('.info').style.display = 'block';
+      if(info.style.display == 'none' || info.style.display == ''){
+       info.style.display = 'block';
+      }
+      else{
+        info.style.display = 'none';
+      }
     });
   });
 }
